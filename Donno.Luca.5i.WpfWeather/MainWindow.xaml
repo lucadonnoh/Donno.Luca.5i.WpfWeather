@@ -1,0 +1,50 @@
+﻿<Window x:Class="Donno.Luca._5i.WpfWeather.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Donno.Luca._5i.WpfWeather"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="525" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnGo" Click="Button_Click">Clicca</Button>
+        <ListView x:Name="lvWeather" Grid.Column="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" Width="300">
+                        <TextBlock Text="Coordinate:" FontSize="20" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="{Binding coord}"></TextBlock>
+                        <TextBlock Text="Base:" FontSize="20" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="{Binding Base}"></TextBlock>
+                        <TextBlock Text="Main:" FontSize="20" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="{Binding main}"></TextBlock>
+                        <TextBlock Text="Visibility:" FontSize="20" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="{Binding visibility}"></TextBlock>
+                        <TextBlock Text="Wind speed:" FontSize="20" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="{Binding wind.speed}"></TextBlock>
+                        <TextBlock Text="Wind deg:" FontSize="20" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="{Binding wind.deg}"></TextBlock>
+                        <TextBlock Text="Clouds:" FontSize="20" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="{Binding clouds.all}"></TextBlock>
+                        <TextBlock Text="dt:" FontSize="20" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="{Binding dt}"></TextBlock>
+                        <TextBlock Text="Country:" FontSize="20" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="{Binding sys.country}"></TextBlock>
+                        <TextBlock Text="id:" FontSize="20" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="{Binding id}"></TextBlock>
+                        <TextBlock Text="name:" FontSize="20" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="{Binding name}"></TextBlock>
+                        <TextBlock Text="cod:" FontSize="20" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="{Binding cod}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Window>
